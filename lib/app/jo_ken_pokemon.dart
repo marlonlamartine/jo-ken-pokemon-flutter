@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jo_ken_pokemon/app/pages/auth/login_page.dart';
 import 'package:jo_ken_pokemon/app/pages/game/game_page.dart';
 import 'package:jo_ken_pokemon/app/pages/home/home_page.dart';
 import 'package:jo_ken_pokemon/app/pages/splash/splash_page.dart';
+import 'package:jo_ken_pokemon/app/pages/stats/stats_page.dart';
 
 class JoKenPokemon extends StatelessWidget {
   const JoKenPokemon({super.key});
@@ -15,6 +17,8 @@ class JoKenPokemon extends StatelessWidget {
         '/': (context) => const SplashPage(),
         '/home': (context) => const HomePage(),
         '/game': (context) => const GamePage(),
+        '/login': (context) => const LoginPage(),
+        '/stats': (context) => const StatsPage(),
       },
     );
   }

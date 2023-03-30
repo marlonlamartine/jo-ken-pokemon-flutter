@@ -7,6 +7,7 @@ import 'package:jo_ken_pokemon/app/core/ui/styles/text_styles.dart';
 import 'package:jo_ken_pokemon/app/core/ui/widgets/button.dart';
 import 'package:jo_ken_pokemon/app/core/ui/widgets/tile.dart';
 import 'package:jo_ken_pokemon/app/core/ui/widgets/tile_result.dart';
+import 'package:jo_ken_pokemon/app/services/user_prefs.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -25,6 +26,7 @@ class _GamePageState extends State<GamePage> {
   String pathIa = '';
   bool shouldClean = false;
   int result = 0;
+  final _user = UserPrefs();
 
   void clean() {
     result = 0;
@@ -60,8 +62,11 @@ class _GamePageState extends State<GamePage> {
   }
 
   String whoWon() {
+    _user.setTotalMatches();
     if (path == 'bulbasaur' && pathIa == 'squirtle') {
       result = 1;
+      //_user.setBulbasaurWin();
+      _user.playerData.setTotalBulbasaurWins();
       return 'O gigante Bulbassauro foi superior ao Squirtle. Você venceu!';
     } else if (path == 'charmander' && pathIa == 'bulbasaur') {
       result = 1;
@@ -120,11 +125,13 @@ class _GamePageState extends State<GamePage> {
           ),
           Button(
             onPressed: path.isNotEmpty
-                ? () {
+                ? () async {
                     if (!shouldClean) {
                       shouldClean = true;
                       iaChoosed();
                       resultMessage(whoWon(), result);
+                      //int teste = await _user.getBulbasaurWin();
+                      //print('quantas o bulba venceu => $teste');
                       setState(() {});
                     } else {
                       clean();

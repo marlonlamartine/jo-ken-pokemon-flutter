@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "879520685224",
+    "project_id": "jokenpokemon-e6d46",
+    "storage_bucket": "jokenpokemon-e6d46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879520685224:android:87814dd40e3dbdf4b1769d",
+        "android_client_info": {
+          "package_name": "br.com.marlonlamartine.jo_ken_pokemon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879520685224-1rgcunktv1961r8g8i20v1dql75rbtub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTnfv90DWfVY0pmKpmPGVzoBVkuH1VKvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879520685224-1rgcunktv1961r8g8i20v1dql75rbtub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

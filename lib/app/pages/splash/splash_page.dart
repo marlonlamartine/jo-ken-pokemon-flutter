@@ -3,9 +3,22 @@ import 'package:jo_ken_pokemon/app/core/ui/styles/button_styles.dart';
 import 'package:jo_ken_pokemon/app/core/ui/styles/colors_app.dart';
 import 'package:jo_ken_pokemon/app/core/ui/styles/text_styles.dart';
 import 'package:jo_ken_pokemon/app/core/ui/widgets/button.dart';
+import 'package:jo_ken_pokemon/app/services/user_prefs.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
+
+  void onButtonTapped(BuildContext context) async {
+    final navigator = Navigator.of(context);
+    final user = UserPrefs();
+    String name = await user.getUserName();
+
+    if (name.isEmpty) {
+      navigator.pushNamed('/login');
+    } else {
+      navigator.pushNamed('/home');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +48,17 @@ class SplashPage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Button(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/home');
+                  onPressed: () async {
+                    final navigator = Navigator.of(context);
+                    /*final user = UserPrefs();
+                    String name = await user.getUserName();
+
+                    if (name.isEmpty) {
+                      navigator.pushNamed('/login');
+                    } else {
+                      navigator.pushNamed('/home');
+                    }*/
+                    navigator.pushNamed('/game');
                   },
                   width: MediaQuery.of(context).size.width * .9,
                   label: 'Acessar',

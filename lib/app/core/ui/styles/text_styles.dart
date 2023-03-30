@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:jo_ken_pokemon/app/core/ui/styles/colors_app.dart';
 
 class TextStyles {
@@ -29,6 +29,12 @@ class TextStyles {
         fontFamily: fontSolid,
         fontSize: 23,
         color: ColorsApp.instance.lightBlue,
+        letterSpacing: 3,
+      );
+  TextStyle get textSolidBlueData => TextStyle(
+        fontFamily: fontSolid,
+        fontSize: 14,
+        color: Colors.white,
         letterSpacing: 3,
       );
 }
